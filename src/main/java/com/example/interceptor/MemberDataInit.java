@@ -18,7 +18,7 @@ public class MemberDataInit {
     @PostConstruct
     public void init() {
         Member member = new Member();
-        member.setLoginId("oniic");
+        member.setLoginId("test");
         member.setPassword("0000");
 
         memberRepository.save(member);

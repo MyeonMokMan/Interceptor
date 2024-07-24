@@ -24,15 +24,15 @@ public class LogInterceptor implements HandlerInterceptor {
         return true;
     }
 
-    @Override
+    /*@Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         log.info("postHandle [{}]", modelAndView);
-    }
+    }*/
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         String requestURI = request.getRequestURI();
         String log_uuid = (String)request.getAttribute(LOG_ID);
-        log.info("RESPONSE [{}][{}]", log_uuid, requestURI);
+        log.info("RESPONSE [{}][{}][{}]", log_uuid, requestURI, handler);
     }
 }
